@@ -17,6 +17,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import WorkIcon from '@mui/icons-material/Work';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { useThemeContext } from '../../contexts/ThemeContext';
 
 // Pages for navigation
 const pages = [
@@ -35,7 +36,6 @@ const ResponsiveAppBar = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   
   // Mock dark mode toggle - would connect to actual theme context in full implementation
-  const [darkMode, setDarkMode] = useState(false);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -45,11 +45,10 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    // In full implementation, would dispatch to theme context
-  };
-
+  const { 
+    toggleColorMode,
+    mode
+  } = useThemeContext();
   return (
     <AppBar position="static" sx={{ mb: 2 }}>
       <Container maxWidth="lg">
@@ -163,11 +162,11 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <IconButton 
               sx={{ ml: 1 }} 
-              onClick={toggleDarkMode} 
+              onClick={toggleColorMode} 
               color="inherit"
-              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+              aria-label={mode === 'dark' ? "Switch to light mode" : "Switch to dark mode"}
             >
-              {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+              {mode === 'dark'  ? <Brightness7Icon /> : <Brightness4Icon />}
             </IconButton>
           </Box>
         </Toolbar>
