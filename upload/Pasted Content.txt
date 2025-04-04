@@ -1,0 +1,121 @@
+Aqui está um prompt detalhado para orientar uma LLM (ou equipe de desenvolvimento) na criação de um app React para a JobConnect Moçambique, com foco em acessibilidade e funcionalidades inclusivas:
+
+---
+
+**Prompt para Desenvolvimento de App React: JobConnect Moçambique**  
+
+### **Contexto**  
+Desenvolver uma aplicação web/mobile em React para conectar trabalhadores formais e informais a oportunidades de emprego em Moçambique, com:  
+- **Público-alvo:** Usuários com acesso limitado à internet, dispositivos básicos e baixa alfabetização.  
+- **Principais desafios:**  
+  - Suporte a conexões 2G/3G e dados limitados.  
+  - Interface acessível para usuários não alfabetizados.  
+  - Integração com sistemas offline (USSD, chamadas de voz).  
+
+---
+
+### **Requisitos Funcionais**  
+1. **Módulo USSD Simulado (Offline):**  
+   - Interface que replica o menu USSD (*123#) para usuários sem internet.  
+   - Opções: Busca de vagas, gigs, criação de perfil via SMS simulado.  
+   - Componente de "Ligação Automática" para empregadores (integração com API de voz).  
+
+2. **Perfis em Áudio:**  
+   - Gravação direta no navegador (Web Audio API) ou integração com chamadas telefônicas.  
+   - Player de áudio para empregadores ouvirem candidaturas.  
+   - Transcrição automática opcional (usando Whisper API ou similar).  
+
+3. **Plataforma de Gigs (Trabalhos por Hora):**  
+   - Listagem de trabalhos temporários com filtros por:  
+     - Localização (Maputo, Nampula, etc.).  
+     - Categoria (construção, serviços domésticos, transporte).  
+     - Sistema de avaliação por estrelas (1-5).  
+
+4. **Integração com WhatsApp Business:**  
+   - Envio automatizado de vagas via WhatsApp (usando Twilio API).  
+   - Bot para receber candidaturas via áudio/texto.  
+
+5. **Modo Leitura de Voz (Acessibilidade):**  
+   - Conversão de texto para voz em português e línguas locais.  
+   - Navegação por comandos numéricos (ex.: "Prima 2 para aplicar").  
+
+6. **Mapa de Oportunidades Offline:**  
+   - Exibição de balcões físicos e feiras de emprego usando GPS estático.  
+   - Download prévio de dados para áreas sem conexão.  
+
+---
+
+### **Requisitos Técnicos**  
+- **Frontend:**  
+  - React + TypeScript  
+  - PWA (Progressive Web App) para funcionamento offline.  
+  - Biblioteca de UI: Material-UI ou Chakra UI (design responsivo).  
+  - Gerenciamento de estado: Redux Toolkit ou Context API.  
+
+- **Backend (API):**  
+  - Node.js + Express ou Firebase Functions.  
+  - Banco de dados: Firebase Firestore (offline-first) ou MongoDB.  
+  - APIs externas: Twilio (SMS/voz), Google Cloud Speech-to-Text.  
+
+- **Otimizações:**  
+  - Tamanho total do app < 2MB (compressão agressiva de imagens/áudio).  
+  - Carregamento lazy de componentes.  
+  - Cache de dados via Service Workers.  
+
+---
+
+### **UI/UX Guidelines**  
+- **Design Inclusivo:**  
+  - Ícones universais (ex.: ⚒ para construção, 🚗 para transporte).  
+  - Cores de alto contraste e fontes grandes.  
+  - Modo escuro automático (para áreas com pouca energia elétrica).  
+
+- **Fluxos Prioritários:**  
+  1. Busca de vagas em 3 cliques (sem login obrigatório).  
+  2. Gravação de áudio com instruções passo a passo.  
+  3. Integração com USSD via pop-up explicativo.  
+
+- **Localização:**  
+  - Suporte a português, changana e macua.  
+  - Formatos de data/moeda locais.  
+
+---
+
+### **Testes Obrigatórios**  
+- **Dispositivos:**  
+  - Testar em Android Go (1GB RAM) e Safari iOS antigo.  
+  - Simular conexão 2G (Lighthouse ou Chrome DevTools).  
+
+- **Casos de Uso Críticos:**  
+  - Usuário sem conta cria perfil em áudio em < 2 minutos.  
+  - Empregador encontra 10 pedreiros em Maputo offline.  
+  - Sistema funciona por 7 dias sem internet (modo PWA).  
+
+---
+
+### **Entregáveis Esperados**  
+1. Repositório GitHub com:  
+   - Código frontend em React.  
+   - Exemplo de integração com Twilio API.  
+   - Dockerfile para deploy em ambientes de baixo recurso.  
+
+2. Documentação:  
+   - Guia para agentes comunitários (como usar o app offline).  
+   - Vídeo tutorial em línguas locais (MP4 de 3 minutos).  
+
+3. Roadmap Futuro:  
+   - Integração com MPesa para pagamentos de gigs.  
+   - Versão Lite para Telegram/SMS.  
+
+--- 
+
+**Instrução Final para a LLM:**  
+"Gere um plano de desenvolvimento detalhado em React, priorizando componentes reutilizáveis, acessibilidade (WCAG 2.1) e performance extrema. Inclua exemplos de código para:  
+- Integração USSD simulada.  
+- Gravação/playback de áudio.  
+- Sistema de avaliação de gigs.  
+- Configuração do PWA offline."  
+
+--- 
+
+Esse prompt fornece direcionamento técnico e contextual para uma implementação realista, adaptada às necessidades de Moçambique.

@@ -1,0 +1,47 @@
+2025-04-04 06:29:00.195 [info] [main] Log level: Info
+2025-04-04 06:29:00.196 [info] [main] Validating found git in: "git"
+2025-04-04 06:29:00.196 [info] [main] Using git "2.34.1" from "git"
+2025-04-04 06:29:00.196 [info] [Model][doInitialScan] Initial repository scan started
+2025-04-04 06:29:00.196 [info] > git rev-parse --show-toplevel [39ms]
+2025-04-04 06:29:00.196 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-04-04 06:29:00.196 [info] > git rev-parse --show-toplevel [4ms]
+2025-04-04 06:29:00.196 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-04-04 06:29:00.196 [info] > git rev-parse --show-toplevel [2ms]
+2025-04-04 06:29:00.196 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-04-04 06:29:00.196 [info] > git rev-parse --show-toplevel [2ms]
+2025-04-04 06:29:00.196 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-04-04 06:29:00.196 [info] > git rev-parse --show-toplevel [2ms]
+2025-04-04 06:29:00.196 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-04-04 06:29:00.196 [info] > git rev-parse --show-toplevel [2ms]
+2025-04-04 06:29:00.196 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-04-04 06:29:00.196 [info] > git rev-parse --show-toplevel [2ms]
+2025-04-04 06:29:00.196 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-04-04 06:29:00.196 [info] > git rev-parse --show-toplevel [2ms]
+2025-04-04 06:29:00.196 [info] > git rev-parse --git-dir --git-common-dir [2ms]
+2025-04-04 06:29:00.196 [info] [Model][openRepository] Opened repository: /home/ubuntu/.nvm
+2025-04-04 06:29:00.196 [info] > git config --get commit.template [5ms]
+2025-04-04 06:29:00.196 [info] > git rev-parse --show-toplevel [2ms]
+2025-04-04 06:29:00.196 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-04-04 06:29:00.196 [info] > git for-each-ref --format %(refname) %(objectname) %(*objectname) refs/tags [6ms]
+2025-04-04 06:29:00.196 [info] > git rev-parse --show-toplevel [13ms]
+2025-04-04 06:29:00.196 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-04-04 06:29:00.196 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [8ms]
+2025-04-04 06:29:00.196 [info] > git rev-parse --show-toplevel [3ms]
+2025-04-04 06:29:00.196 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-04-04 06:29:00.201 [info] > git rev-parse --show-toplevel [2ms]
+2025-04-04 06:29:00.201 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-04-04 06:29:00.204 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-04-04 06:29:00.205 [info] > git status -z -uall [24ms]
+2025-04-04 06:29:00.280 [info] > git for-each-ref --format %(refname) %(objectname) %(*objectname) refs/tags [43ms]
+2025-04-04 06:29:00.280 [info] > git config --get commit.template [47ms]
+2025-04-04 06:29:00.293 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [6ms]
+2025-04-04 06:29:00.309 [info] > git status -z -uall [25ms]
+2025-04-04 06:29:00.355 [info] > git rev-parse --show-toplevel [2ms]
+2025-04-04 06:29:00.355 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-04-04 06:29:00.798 [info] > git check-ignore -v -z --stdin [3ms]
+2025-04-04 06:29:00.817 [info] > git rev-parse --show-toplevel [3ms]
+2025-04-04 06:29:08.230 [info] > git rev-parse --show-toplevel [2ms]
+2025-04-04 06:29:08.230 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-04-04 06:29:31.444 [info] > git rev-parse --show-toplevel [3ms]
+2025-04-04 06:29:31.444 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-04-04 06:29:31.459 [info] > git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [34ms]

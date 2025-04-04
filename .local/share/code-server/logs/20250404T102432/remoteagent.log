@@ -1,0 +1,36 @@
+2025-04-04 10:24:32.556 [info] 
+
+
+
+
+2025-04-04 10:24:32.587 [info] Extension host agent started.
+2025-04-04 10:24:32.682 [info] Started initializing default profile extensions in extensions installation folder. file:///home/ubuntu/.local/share/code-server/extensions
+2025-04-04 10:24:32.719 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/ubuntu/.local/share/code-server/extensions
+2025-04-04 10:24:35.524 [info] [10.79.14.1][91a60aea][ManagementConnection] New connection established.
+2025-04-04 10:24:36.964 [info] [10.79.14.1][6cb79e8b][ExtensionHostConnection] New connection established.
+2025-04-04 10:24:37.568 [info] [10.79.14.1][6cb79e8b][ExtensionHostConnection] <6282> Launched Extension Host Process.
+2025-04-04 10:27:35.485 [info] [10.79.14.1][91a60aea][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-04-04 10:27:35.591 [info] [10.79.14.1][6cb79e8b][ExtensionHostConnection] <6282> Extension Host Process exited with code: 0, signal: null.
+2025-04-04 10:28:56.205 [info] [10.79.14.1][4b4dae68][ManagementConnection] New connection established.
+2025-04-04 10:28:57.626 [info] [10.79.14.1][c8b2a4b1][ExtensionHostConnection] New connection established.
+2025-04-04 10:28:57.637 [info] [10.79.14.1][c8b2a4b1][ExtensionHostConnection] <6909> Launched Extension Host Process.
+2025-04-04 10:38:24.435 [info] [10.25.3.1][d48e0cb2][ManagementConnection] New connection established.
+2025-04-04 10:38:26.788 [info] [10.25.3.1][4f00da1b][ExtensionHostConnection] New connection established.
+2025-04-04 10:38:26.795 [info] [10.25.3.1][4f00da1b][ExtensionHostConnection] <8772> Launched Extension Host Process.
+2025-04-04 10:38:39.913 [error] [File Watcher] Inotify limit reached (ENOSPC) (path: /home/ubuntu)
+2025-04-04 10:58:51.688 [error] Error: read ETIMEDOUT
+    at TCP.onStreamRead (node:internal/stream_base_commons:218:20)
+2025-04-04 10:58:51.698 [info] [10.79.14.1][4b4dae68][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+2025-04-04 11:03:24.360 [info] [10.79.14.1][4b4dae68][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+2025-04-04 11:03:24.361 [info] [10.138.205.1][86b206fe][ManagementConnection] New connection established.
+2025-04-04 11:03:26.036 [info] [10.138.205.1][adcdb84b][ExtensionHostConnection] New connection established.
+2025-04-04 11:03:26.051 [info] [10.138.205.1][adcdb84b][ExtensionHostConnection] <15954> Launched Extension Host Process.
+2025-04-04 11:03:39.602 [error] [File Watcher] Inotify limit reached (ENOSPC) (path: /home/ubuntu)
+2025-04-04 11:08:24.447 [info] [10.79.14.1][4b4dae68][ManagementConnection] The reconnection short grace time of 5m has expired, so the connection will be disposed.
+2025-04-04 11:08:24.624 [info] [10.79.14.1][c8b2a4b1][ExtensionHostConnection] <6909> Extension Host Process exited with code: 0, signal: null.
+2025-04-04 11:13:56.880 [info] [10.91.2.1][bdf43da9][ManagementConnection] New connection established.
+2025-04-04 11:13:58.593 [info] [10.91.2.1][ca4486bd][ExtensionHostConnection] New connection established.
+2025-04-04 11:13:58.612 [info] [10.91.2.1][ca4486bd][ExtensionHostConnection] <21163> Launched Extension Host Process.
+2025-04-04 11:14:35.606 [error] Error: read ETIMEDOUT
+    at TCP.onStreamRead (node:internal/stream_base_commons:218:20)
+2025-04-04 11:14:35.609 [info] [10.25.3.1][d48e0cb2][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
