@@ -139,8 +139,4 @@ We welcome contributions to improve the JobConnect Moçambique prototype. If you
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
-
----
-
-This README should provide you with everything needed to develop the JobConnect Moçambique prototype. Feel free to customize it further based on your project's specific requirements!
+None yet
