@@ -21,13 +21,18 @@ import { useThemeContext } from '../../contexts/ThemeContext';
 
 // Pages for navigation
 const pages = [
-  { name: '1. Home', path: '/' },
-  { name: '2. Jobs', path: '/jobs' },
-  { name: '3. Profile', path: '/profile' },
-  { name: '4. USSD', path: '/ussd' },
-  { name: '5. Map', path: '/offline-map' },
+  { name: ' Home', path: '/' },
+  { name: ' Jobs', path: '/jobs' },
+  { name: ' Gigs', path: '/gigs' },
+  { name: ' Profile', path: '/profile' },
+  { name: ' USSD', path: '/ussd' },
+  { name: ' Map', path: '/offline-map' },
+  { name: ' Voice Reading', path: '/voice-reading' },
+  { name: ' WhatsApp', path: '/whatsapp' },
+  { name: ' Optimization', path: '/optimization' },
+  { name: ' Language', path: '/language' },
+ 
 ];
-
 // Using numeric prefixes for navigation to support non-literate users
 
 const ResponsiveAppBar = () => {

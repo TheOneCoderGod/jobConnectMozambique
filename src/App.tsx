@@ -7,12 +7,17 @@ import ErrorBoundary from './components/common/ErrorBoundary';
 import OfflineAlert from './components/common/OfflineAlert';
 import AccessibilityControls from './components/accessibility/AccessibilityControls';
 
-// Lazy load pages for better performance on low-end devices
+// Lazy load pages for better performance
 const HomePage = lazy(() => import('./pages/HomePage'));
 const JobsPage = lazy(() => import('./pages/JobsPage'));
 const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 const UssdSimulationPage = lazy(() => import('./pages/UssdSimulationPage'));
 const OfflineMapPage = lazy(() => import('./pages/OfflineMapPage'));
+const VoiceReadingPage = lazy(() => import('./pages/VoiceReadingPage'));
+const WhatsAppPage = lazy(() => import('./pages/WhatsAppPage'));
+const OptimizationPage = lazy(() => import('./pages/OptimizationPage'));
+const LanguagePage = lazy(() => import('./pages/LanguagePage'));
+const GigsPage = lazy(() => import('./pages/GigsPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 // Loading component for suspense fallback
@@ -56,6 +61,11 @@ function App() {
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/ussd" element={<UssdSimulationPage />} />
               <Route path="/offline-map" element={<OfflineMapPage />} />
+              <Route path="/voice-reading" element={<VoiceReadingPage />} />
+              <Route path="/whatsapp" element={<WhatsAppPage />} />
+              <Route path="/optimization" element={<OptimizationPage />} />
+              <Route path="/language" element={<LanguagePage />} />
+              <Route path="/gigs" element={<GigsPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>

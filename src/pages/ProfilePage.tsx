@@ -6,18 +6,17 @@ import {
   Paper, 
   TextField, 
   Button, 
-  Grid,
-  Card,
-  CardContent,
-  Avatar,
-  List,
-  ListItem,
-  ListItemText,
-  Divider,
-  Chip,
-  Tab,
-  Tabs,
-  Alert
+  Card, 
+  CardContent, 
+  Avatar, 
+  List, 
+  ListItem, 
+  ListItemText, 
+  Divider, 
+  Chip, 
+  Tab, 
+  Tabs, 
+  Alert 
 } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import WorkIcon from '@mui/icons-material/Work';
@@ -83,7 +82,6 @@ const ProfilePage: React.FC = () => {
     
     // Simulate transcription process (in a real app, this would call an API)
     setTimeout(() => {
-      // Simulate successful transcription
       if (Math.random() > 0.2) { // 80% success rate for demo
         dispatch(transcriptionComplete(
           "Hello, my name is João Mabunda. I have 5 years of experience in construction work, " +
@@ -93,7 +91,6 @@ const ProfilePage: React.FC = () => {
           "transportation and basic tools. I am reliable and hardworking."
         ));
       } else {
-        // Simulate failed transcription
         dispatch(transcriptionFailed("Could not transcribe audio. Please try recording again with clearer speech."));
       }
     }, 3000);
@@ -117,8 +114,8 @@ const ProfilePage: React.FC = () => {
           language="en-US"
         />
         
-        <Grid container spacing={4}>
-          <Grid>
+        <Box sx={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
+          <Box sx={{ flex: 1 }}>
             <Card>
               <CardContent sx={{ textAlign: 'center' }}>
                 <Avatar 
@@ -180,9 +177,9 @@ const ProfilePage: React.FC = () => {
                 Secondary School Certificate
               </Typography>
             </Paper>
-          </Grid>
+          </Box>
           
-          <Grid>
+          <Box sx={{ flex: 2 }}>
             <Paper sx={{ p: 3 }}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs 
@@ -260,8 +257,8 @@ const ProfilePage: React.FC = () => {
                 </Button>
               </TabPanel>
             </Paper>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </Box>
     </Container>
   );

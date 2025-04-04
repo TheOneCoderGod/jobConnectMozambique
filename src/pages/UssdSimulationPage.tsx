@@ -10,7 +10,6 @@ import {
   ListItem,
   ListItemText,
   Divider,
-  Grid,
   Card,
   CardContent,
   Dialog,
@@ -155,184 +154,84 @@ const UssdSimulationPage: React.FC = () => {
           language="en-US"
         />
         
-        <Grid container spacing={4}>
-          <Grid >
-            <Card sx={{ height: '100%' }}>
-              <CardContent>
-                <Typography variant="h6" gutterBottom>
-                  How USSD Works:
-                </Typography>
-                <List>
-                  <ListItem>
-                    <ListItemText 
-                      primary="1. Dial *123# on your phone" 
-                      secondary="No internet needed, works on any phone"
-                    />
-                  </ListItem>
-                  <Divider />
-                  <ListItem>
-                    <ListItemText 
-                      primary="2. Navigate using number keys" 
-                      secondary="Press numbers to select options"
-                    />
-                  </ListItem>
-                  <Divider />
-                  <ListItem>
-                    <ListItemText 
-                      primary="3. Find jobs in your area" 
-                      secondary="Browse jobs by location and category"
-                    />
-                  </ListItem>
-                  <Divider />
-                  <ListItem>
-                    <ListItemText 
-                      primary="4. Create profile via SMS" 
-                      secondary="Send your details via text message"
-                    />
-                  </ListItem>
-                  <Divider />
-                  <ListItem>
-                    <ListItemText 
-                      primary="5. Get job alerts" 
-                      secondary="Receive notifications about new jobs"
-                    />
-                  </ListItem>
-                </List>
-                
-                <Box sx={{ mt: 3, display: 'flex', justifyContent: 'center' }}>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    startIcon={<CallIcon />}
-                    size="large"
-                    onClick={() => dispatch(setInputValue('2'))}
-                  >
-                    Try USSD Demo
-                  </Button>
+        {/* Phone-like container */}
+        <Box 
+          sx={{ 
+            borderRadius: 2, 
+            bgcolor: '#000', 
+            color: '#fff', 
+            maxWidth: 360, 
+            margin: 'auto', 
+            padding: 3, 
+            display: 'flex', 
+            flexDirection: 'column', 
+            justifyContent: 'space-between', 
+            height: '500px'
+          }}
+        >
+          {/* USSD Menu */}
+          <Box sx={{ flexGrow: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
+            <Box sx={{ flex: 1 }}>
+              {isProcessing ? (
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+                  <CircularProgress color="inherit" size={40} />
+                  <Typography variant="body1" sx={{ mt: 2 }}>Processing...</Typography>
                 </Box>
-              </CardContent>
-            </Card>
-          </Grid>
+              ) : (
+                renderUssdContent()
+              )}
+            </Box>
+          </Box>
           
-          <Grid >
-            <Paper 
-              sx={{ 
-                p: 2, 
-                bgcolor: '#000', 
-                color: '#fff', 
-                fontFamily: 'monospace',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column'
+          {/* Input field */}
+          <Box component="form" onSubmit={handleUssdSubmit} sx={{ display: 'flex', flexDirection: 'column' }}>
+            <TextField
+              fullWidth
+              variant="outlined"
+              placeholder="Enter number..."
+              value={inputValue}
+              onChange={handleUssdInput}
+              disabled={isProcessing}
+              InputProps={{
+                startAdornment: <KeyboardIcon sx={{ mr: 1, color: '#aaa' }} />,
+                sx: { bgcolor: '#333', color: '#fff' }
               }}
+              sx={{ mb: 2 }}
+            />
+            
+            <Button
+              variant="contained"
+              color="primary"
+              type="submit"
+              disabled={isProcessing || !inputValue}
+              sx={{ height: '56px' }}
             >
-              <Box sx={{ 
-                bgcolor: '#222', 
-                p: 2, 
-                borderRadius: 1, 
-                mb: 2,
-                flexGrow: 1,
-                minHeight: '300px',
-                position: 'relative'
-              }}>
-                {isProcessing ? (
-                  <Box sx={{ 
-                    display: 'flex', 
-                    flexDirection: 'column',
-                    alignItems: 'center', 
-                    justifyContent: 'center',
-                    height: '100%'
-                  }}>
-                    <CircularProgress color="inherit" size={40} />
-                    <Typography variant="body1" sx={{ mt: 2 }}>
-                      Processing...
-                    </Typography>
-                  </Box>
-                ) : (
-                  renderUssdContent()
-                )}
-              </Box>
-              
-              <Box component="form" onSubmit={handleUssdSubmit}>
-                <Grid container spacing={1} alignItems="center">
-                  <Grid>
-                    <TextField
-                      fullWidth
-                      variant="outlined"
-                      placeholder="Enter number..."
-                      value={inputValue}
-                      onChange={handleUssdInput}
-                      disabled={isProcessing}
-                      InputProps={{
-                        startAdornment: <KeyboardIcon sx={{ mr: 1, color: '#aaa' }} />,
-                        sx: { 
-                          bgcolor: '#333', 
-                          color: '#fff',
-                          '& .MuiOutlinedInput-notchedOutline': {
-                            borderColor: '#555',
-                          },
-                          '&:hover .MuiOutlinedInput-notchedOutline': {
-                            borderColor: '#777',
-                          },
-                          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                            borderColor: '#0088ff',
-                          }
-                        }
-                      }}
-                    />
-                  </Grid>
-                  <Grid>
-                    <Button
-                      fullWidth
-                      variant="contained"
-                      color="primary"
-                      type="submit"
-                      disabled={isProcessing || !inputValue}
-                      sx={{ height: '56px' }}
-                    >
-                      Send
-                    </Button>
-                  </Grid>
-                </Grid>
-                
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
-                  <Button
-                    variant="outlined"
-                    startIcon={<ArrowBackIcon />}
-                    onClick={handleBack}
-                    disabled={isProcessing}
-                    sx={{ 
-                      color: '#fff', 
-                      borderColor: '#555',
-                      '&:hover': {
-                        borderColor: '#fff',
-                        bgcolor: 'rgba(255,255,255,0.1)'
-                      }
-                    }}
-                  >
-                    Back
-                  </Button>
-                  
-                  <Button
-                    variant="outlined"
-                    onClick={handleMainMenu}
-                    disabled={isProcessing}
-                    sx={{ 
-                      color: '#fff', 
-                      borderColor: '#555',
-                      '&:hover': {
-                        borderColor: '#fff',
-                        bgcolor: 'rgba(255,255,255,0.1)'
-                      }
-                    }}
-                  >
-                    Main Menu
-                  </Button>
-                </Box>
-              </Box>
-            </Paper>
-          </Grid>
-        </Grid>
+              Send
+            </Button>
+          </Box>
+
+          {/* Bottom Navigation */}
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
+            <Button
+              variant="outlined"
+              startIcon={<ArrowBackIcon />}
+              onClick={handleBack}
+              disabled={isProcessing}
+              sx={{ color: '#fff', borderColor: '#555' }}
+            >
+              Back
+            </Button>
+
+            <Button
+              variant="outlined"
+              onClick={handleMainMenu}
+              disabled={isProcessing}
+              sx={{ color: '#fff', borderColor: '#555' }}
+            >
+              Main Menu
+            </Button>
+          </Box>
+        </Box>
       </Box>
       
       {/* Phone Call Dialog */}
@@ -372,12 +271,7 @@ const UssdSimulationPage: React.FC = () => {
           </Typography>
         </DialogContent>
         <DialogActions sx={{ justifyContent: 'center', pb: 3 }}>
-          <Button 
-            variant="contained" 
-            color="error" 
-            onClick={handleEndCall}
-            startIcon={<CloseIcon />}
-          >
+          <Button variant="contained" color="error" onClick={handleEndCall} startIcon={<CloseIcon />}>
             End Call
           </Button>
         </DialogActions>
@@ -413,9 +307,7 @@ const UssdSimulationPage: React.FC = () => {
         <DialogContent sx={{ py: 4 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
             <SmsIcon sx={{ mr: 1, color: 'primary.main' }} />
-            <Typography variant="body1">
-              To: {smsNumber}
-            </Typography>
+            <Typography variant="body1">To: {smsNumber}</Typography>
           </Box>
           <Paper variant="outlined" sx={{ p: 2, bgcolor: '#f5f5f5' }}>
             <Typography variant="body1" sx={{ whiteSpace: 'pre-wrap' }}>
@@ -424,12 +316,7 @@ const UssdSimulationPage: React.FC = () => {
           </Paper>
         </DialogContent>
         <DialogActions sx={{ justifyContent: 'center', pb: 3 }}>
-          <Button 
-            variant="contained" 
-            color="primary" 
-            onClick={handleClearSms}
-            startIcon={<SmsIcon />}
-          >
+          <Button variant="contained" color="primary" onClick={handleClearSms} startIcon={<SmsIcon />}>
             Send SMS
           </Button>
         </DialogActions>
