@@ -116,7 +116,7 @@ const OfflineMapPage: React.FC = () => {
         />
         
         <Grid container spacing={3}>
-          <Grid item xs={12}>
+          <Grid >
             <Paper sx={{ p: 3, mb: 3 }}>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
                 <Typography variant="h6">
@@ -202,11 +202,11 @@ const OfflineMapPage: React.FC = () => {
             </Paper>
           </Grid>
           
-          <Grid item xs={12}>
+          <Grid >
             <OfflineMap height={600} />
           </Grid>
           
-          <Grid item xs={12}>
+          <Grid >
             <Paper sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom>
                 How to Use the Offline Map
@@ -219,7 +219,7 @@ const OfflineMapPage: React.FC = () => {
               </Typography>
               
               <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
+                <Grid >
                   <Typography variant="subtitle1" gutterBottom>
                     1. Save Map Data for Offline Use
                   </Typography>
@@ -237,7 +237,7 @@ const OfflineMapPage: React.FC = () => {
                   </Typography>
                 </Grid>
                 
-                <Grid item xs={12} md={6}>
+                <Grid>
                   <Typography variant="subtitle1" gutterBottom>
                     3. View Job Details
                   </Typography>

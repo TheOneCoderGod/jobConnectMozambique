@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
       </Box>
 
       <Grid container spacing={4} sx={{ mb: 6 }}>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid >
           <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
             <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
               <WorkIcon sx={{ fontSize: 60, mb: 2, color: 'primary.main' }} />
@@ -44,7 +44,7 @@ const HomePage: React.FC = () => {
           </Card>
         </Grid>
 
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid >
           <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
             <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
               <MicIcon sx={{ fontSize: 60, mb: 2, color: 'primary.main' }} />
@@ -69,7 +69,7 @@ const HomePage: React.FC = () => {
           </Card>
         </Grid>
 
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid >
           <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
             <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
               <PhoneIcon sx={{ fontSize: 60, mb: 2, color: 'primary.main' }} />
@@ -94,7 +94,7 @@ const HomePage: React.FC = () => {
           </Card>
         </Grid>
 
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid >
           <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
             <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
               <MapIcon sx={{ fontSize: 60, mb: 2, color: 'primary.main' }} />

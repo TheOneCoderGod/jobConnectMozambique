@@ -34,19 +34,16 @@ import {
 
 // Fix for the marker icon issue in react-leaflet
 // This is needed because webpack handles assets differently
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
-  iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
-});
+L.Icon.Default.prototype.options.iconRetinaUrl = 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png';
+L.Icon.Default.prototype.options.iconUrl = 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png';
+L.Icon.Default.prototype.options.shadowUrl = 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png';
 
 // Custom marker icons for different job categories
 const getMarkerIcon = (category: string, isUrgent: boolean = false) => {
-  const iconSize = [25, 41];
-  const iconAnchor = [12, 41];
-  const popupAnchor = [1, -34];
-  const shadowSize = [41, 41];
+  const iconSize: [number, number] = [25, 41];
+  const iconAnchor: [number, number] = [12, 41];
+  const popupAnchor: [number, number] = [1, -34];
+  const shadowSize: [number, number] = [41, 41];
   
   let iconUrl = 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png';
   
@@ -134,10 +131,10 @@ const OfflineMap: React.FC<OfflineMapProps> = ({ height = 500 }) => {
         
         <List sx={{ maxHeight: 400, overflow: 'auto' }}>
           {locations.map((location) => (
-            <ListItem 
+            <ListItem
               key={location.id}
-              button
-              selected={selectedLocation?.id === location.id}
+              component="button"
+              // selected={selectedLocation?.id === location.id}
               onClick={() => handleLocationSelect(location.id)}
               sx={{ 
                 borderLeft: selectedLocation?.id === location.id 

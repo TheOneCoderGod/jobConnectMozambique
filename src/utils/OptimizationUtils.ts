@@ -1,6 +1,14 @@
 // Optimization utilities for low-resource environments
 // This file contains utilities to optimize the application for low-end devices and limited network conditions
 
+// Extend Navigator interface to include deviceMemory property
+declare global {
+  interface Navigator {
+    deviceMemory?: number;
+    getBattery?: () => Promise<any>;
+  }
+}
+
 /**
  * Image optimization utilities
  */
@@ -203,8 +211,8 @@ export const isLowBattery = async (): Promise<boolean> => {
 
 // Function to adjust app behavior based on battery status
 export const getOptimalRefreshInterval = async (): Promise<number> => {
-  if (navigator.getBattery) {
-    const battery = await navigator.getBattery();
+  if (navigator?.getBattery) {
+    const battery = await navigator?.getBattery();
     
     if (battery.charging) {
       return 60000; // 1 minute if charging

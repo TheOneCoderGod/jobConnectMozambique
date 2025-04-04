@@ -119,7 +119,7 @@ const VoiceReadingPage: React.FC = () => {
         </Typography>
         
         <Grid container spacing={4}>
-          <Grid item xs={12}>
+          <Grid >
             <Paper sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom>
                 <VolumeUpIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
@@ -175,7 +175,7 @@ const VoiceReadingPage: React.FC = () => {
             </Paper>
           </Grid>
           
-          <Grid item xs={12} md={6}>
+          <Grid>
             <Card>
               <CardContent>
                 <Typography variant="h6" gutterBottom>
@@ -231,7 +231,7 @@ const VoiceReadingPage: React.FC = () => {
             </Card>
           </Grid>
           
-          <Grid item xs={12} md={6}>
+          <Grid>
             <Card>
               <CardContent>
                 <Typography variant="h6" gutterBottom>
@@ -280,7 +280,7 @@ const VoiceReadingPage: React.FC = () => {
             </Card>
           </Grid>
           
-          <Grid item xs={12}>
+          <Grid >
             <Paper sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom>
                 <KeyboardIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
@@ -294,7 +294,7 @@ const VoiceReadingPage: React.FC = () => {
               </Typography>
               
               <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
+                <Grid >
                   <List dense>
                     <ListItem>
                       <ListItemText 
@@ -316,7 +316,7 @@ const VoiceReadingPage: React.FC = () => {
                     </ListItem>
                   </List>
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid>
                   <List dense>
                     <ListItem>
                       <ListItemText 

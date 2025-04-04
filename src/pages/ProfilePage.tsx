@@ -118,7 +118,7 @@ const ProfilePage: React.FC = () => {
         />
         
         <Grid container spacing={4}>
-          <Grid item xs={12} md={4}>
+          <Grid>
             <Card>
               <CardContent sx={{ textAlign: 'center' }}>
                 <Avatar 
@@ -182,7 +182,7 @@ const ProfilePage: React.FC = () => {
             </Paper>
           </Grid>
           
-          <Grid item xs={12} md={8}>
+          <Grid>
             <Paper sx={{ p: 3 }}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs 

@@ -3,7 +3,6 @@ import {
   Container, 
   Typography, 
   Box, 
-  Grid, 
   Card, 
   CardContent, 
   Chip, 
@@ -15,7 +14,8 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  SelectChangeEvent
+  SelectChangeEvent,
+  Grid
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -84,7 +84,7 @@ const JobsPage: React.FC = () => {
           </Typography>
           
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={4}>
+            <Grid size={4}>
               <TextField
                 fullWidth
                 placeholder="Search jobs..."
@@ -99,7 +99,7 @@ const JobsPage: React.FC = () => {
               />
             </Grid>
             
-            <Grid item xs={12} sm={4}>
+            <Grid size={4}>
               <FormControl fullWidth>
                 <InputLabel id="location-select-label">Location</InputLabel>
                 <Select
@@ -118,7 +118,7 @@ const JobsPage: React.FC = () => {
               </FormControl>
             </Grid>
             
-            <Grid item xs={12} sm={4}>
+            <Grid size={4}>
               <FormControl fullWidth>
                 <InputLabel id="category-select-label">Category</InputLabel>
                 <Select
@@ -152,11 +152,11 @@ const JobsPage: React.FC = () => {
         
         <Grid container spacing={3}>
           {jobs.map((job) => (
-            <Grid item xs={12} key={job.id}>
+             <Grid key={job.id}>
               <Card sx={{ mb: 2 }}>
                 <CardContent>
                   <Grid container spacing={2}>
-                    <Grid item xs={12} sm={8}>
+                    <Grid>
                       <Typography variant="h5" component="h2" gutterBottom>
                         {job.title}
                       </Typography>
@@ -197,7 +197,7 @@ const JobsPage: React.FC = () => {
                       </Box>
                     </Grid>
                     
-                    <Grid item xs={12} sm={4} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                    <Grid  sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                       <Box>
                         <Chip 
                           label={job.hourlyRate + ' per hour'} 

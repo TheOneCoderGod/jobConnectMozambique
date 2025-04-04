@@ -27,7 +27,7 @@ import TextToSpeech from '../components/accessibility/TextToSpeech';
 import { useTranslation } from 'react-i18next';
 
 const LanguagePage: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation<'translation'>(); // Explicitly specify the namespace
   
   // Handle language change
   const handleLanguageChange = (event: SelectChangeEvent<string>) => {
@@ -64,7 +64,7 @@ const LanguagePage: React.FC = () => {
         />
         
         <Grid container spacing={4}>
-          <Grid item xs={12}>
+          <Grid>
             <Paper sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom>
                 <LanguageIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
@@ -144,7 +144,7 @@ const LanguagePage: React.FC = () => {
             </Paper>
           </Grid>
           
-          <Grid item xs={12} md={6}>
+          <Grid>
             <Card>
               <CardContent>
                 <Typography variant="h6" gutterBottom>
@@ -190,7 +190,7 @@ const LanguagePage: React.FC = () => {
             </Card>
           </Grid>
           
-          <Grid item xs={12} md={6}>
+          <Grid>
             <Card>
               <CardContent>
                 <Typography variant="h6" gutterBottom>
@@ -236,7 +236,7 @@ const LanguagePage: React.FC = () => {
             </Card>
           </Grid>
           
-          <Grid item xs={12}>
+          <Grid>
             <Paper sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom>
                 {t('common.help')}
