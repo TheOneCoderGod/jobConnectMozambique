@@ -17,48 +17,57 @@ import MenuIcon from '@mui/icons-material/Menu';
 import WorkIcon from '@mui/icons-material/Work';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import HomeIcon from '@mui/icons-material/Home';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import AutoAwesomeMotionIcon from '@mui/icons-material/AutoAwesomeMotion';
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+import MapIcon from '@mui/icons-material/Map';
+import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LanguageIcon from '@mui/icons-material/Language';
+import PersonIcon from '@mui/icons-material/Person';
+import TuneIcon from '@mui/icons-material/Tune';
 import { useThemeContext } from '../../contexts/ThemeContext';
 
-// Pages for navigation
+// Pages for navigation (with icons)
 const pages = [
-  { name: ' Home', path: '/' },
-  { name: ' Jobs', path: '/jobs' },
-  { name: ' Gigs', path: '/gigs' },
-  { name: ' Profile', path: '/profile' },
-  { name: ' USSD', path: '/ussd' },
-  { name: ' Map', path: '/offline-map' },
-  { name: ' Voice Reading', path: '/voice-reading' },
-  { name: ' WhatsApp', path: '/whatsapp' },
-  { name: ' Optimization', path: '/optimization' },
-  { name: ' Language', path: '/language' },
- 
+  { name: 'Home', path: '/', icon: <HomeIcon fontSize="small" /> },
+  { name: 'Jobs', path: '/jobs', icon: <WorkOutlineIcon fontSize="small" /> },
+  { name: 'Gigs', path: '/gigs', icon: <AutoAwesomeMotionIcon fontSize="small" /> },
+  { name: 'Map', path: '/offline-map', icon: <MapIcon fontSize="small" /> },
+  { name: 'USSD', path: '/ussd', icon: <PhoneAndroidIcon fontSize="small" /> },
+  { name: 'Voice', path: '/voice-reading', icon: <RecordVoiceOverIcon fontSize="small" /> },
+  { name: 'WhatsApp', path: '/whatsapp', icon: <WhatsAppIcon fontSize="small" /> },
+  { name: 'Language', path: '/language', icon: <LanguageIcon fontSize="small" /> },
+  { name: 'Profile', path: '/profile', icon: <PersonIcon fontSize="small" /> },
+  { name: 'Optimization', path: '/optimization', icon: <TuneIcon fontSize="small" /> },
 ];
-// Using numeric prefixes for navigation to support non-literate users
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  
-  // Mock dark mode toggle - would connect to actual theme context in full implementation
+  const { toggleColorMode, mode } = useThemeContext();
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const { 
-    toggleColorMode,
-    mode
-  } = useThemeContext();
   return (
-    <AppBar position="static" sx={{ mb: 2 }}>
+    <AppBar
+      position="static"
+      sx={{
+        mb: 2,
+        // Subtle gradient for a more eye-catching header
+        background: 'linear-gradient(120deg, #1976d2 0%, #42a5f5 100%)',
+      }}
+    >
       <Container maxWidth="lg">
         <Toolbar disableGutters>
-          {/* Logo and title - always visible */}
+          {/* Logo (Desktop) */}
           <WorkIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
@@ -76,7 +85,7 @@ const ResponsiveAppBar = () => {
             JobConnect
           </Typography>
 
-          {/* Mobile menu */}
+          {/* Mobile Menu Icon */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -85,45 +94,44 @@ const ResponsiveAppBar = () => {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              sx={{ mr: 1 }}
             >
               <MenuIcon />
             </IconButton>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
               keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
+              transformOrigin={{ vertical: 'top', horizontal: 'left' }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
+              sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {pages.map((page) => (
-                <MenuItem 
-                  key={page.name} 
+                <MenuItem
+                  key={page.name}
                   onClick={handleCloseNavMenu}
                   component={RouterLink}
                   to={page.path}
-                  sx={{ 
-                    py: 1.5, // Larger touch target for mobile
-                    fontSize: '1.1rem' // Larger text for readability
+                  sx={{
+                    py: 1.5,
+                    fontSize: '1.1rem',
+                    display: 'flex',
+                    alignItems: 'center',
                   }}
                 >
+                  {/* Icon + Label for Mobile */}
+                  <Box sx={{ display: 'flex', alignItems: 'center', mr: 2 }}>
+                    {page.icon}
+                  </Box>
                   <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
-          {/* Mobile logo */}
+          {/* Logo (Mobile) */}
           <WorkIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h6"
@@ -142,7 +150,7 @@ const ResponsiveAppBar = () => {
             JobConnect
           </Typography>
 
-          {/* Desktop menu */}
+          {/* Desktop Menu */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -150,12 +158,18 @@ const ResponsiveAppBar = () => {
                 component={RouterLink}
                 to={page.path}
                 onClick={handleCloseNavMenu}
-                sx={{ 
-                  my: 2, 
-                  color: 'white', 
-                  display: 'block',
-                  fontSize: '1rem', // Larger text for readability
-                  mx: 1
+                startIcon={page.icon}
+                sx={{
+                  my: 1,
+                  color: 'white',
+                  display: 'flex',
+                  alignItems: 'center',
+                  mx: 1,
+                  fontSize: '0.95rem',
+                  textTransform: 'none',
+                  '&:hover': {
+                    backgroundColor: theme.palette.action.hover,
+                  },
                 }}
               >
                 {page.name}
@@ -163,15 +177,17 @@ const ResponsiveAppBar = () => {
             ))}
           </Box>
 
-          {/* Dark mode toggle */}
+          {/* Dark Mode Toggle */}
           <Box sx={{ flexGrow: 0 }}>
-            <IconButton 
-              sx={{ ml: 1 }} 
-              onClick={toggleColorMode} 
+            <IconButton
+              sx={{ ml: 1 }}
+              onClick={toggleColorMode}
               color="inherit"
-              aria-label={mode === 'dark' ? "Switch to light mode" : "Switch to dark mode"}
+              aria-label={
+                mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+              }
             >
-              {mode === 'dark'  ? <Brightness7Icon /> : <Brightness4Icon />}
+              {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
             </IconButton>
           </Box>
         </Toolbar>

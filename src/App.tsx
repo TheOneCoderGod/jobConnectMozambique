@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Box, CircularProgress, Container } from '@mui/material';
+import './i18n';  // <-- Import the i18n config here so it's loaded application-wide
 import ResponsiveAppBar from './components/layout/ResponsiveAppBar';
 import Footer from './components/layout/Footer';
 import ErrorBoundary from './components/common/ErrorBoundary';
@@ -22,36 +23,42 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 // Loading component for suspense fallback
 const LoadingComponent = () => (
-  <Box 
-    display="flex" 
-    justifyContent="center" 
-    alignItems="center" 
+  <Box
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
     minHeight="50vh"
+    aria-busy="true"
+    aria-label="Loading"
   >
-    <CircularProgress size={60} thickness={4} />
+    <CircularProgress
+      size={60}
+      thickness={4}
+      aria-label="Circular loading indicator"
+    />
   </Box>
 );
 
 function App() {
   return (
-    <Box 
-      sx={{ 
-        display: 'flex', 
+    <Box
+      sx={{
+        display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
-        backgroundColor: (theme) => theme.palette.background.default
+        backgroundColor: (theme) => theme.palette.background.default,
       }}
     >
       <ErrorBoundary>
         <OfflineAlert />
         <ResponsiveAppBar />
-        <Container 
-          component="main" 
-          maxWidth="lg" 
-          sx={{ 
-            flexGrow: 1, 
+        <Container
+          component="main"
+          maxWidth="lg"
+          sx={{
+            flexGrow: 1,
             py: 3,
-            px: { xs: 1, sm: 2, md: 3 } // Responsive padding
+            px: { xs: 1, sm: 2, md: 3 }, // responsive padding
           }}
         >
           <Suspense fallback={<LoadingComponent />}>

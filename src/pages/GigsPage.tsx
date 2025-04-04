@@ -59,7 +59,7 @@ const GigsPage: React.FC = () => {
       <Box sx={{ my: 4 }}>
         <Typography variant="h4" gutterBottom>
           <WorkIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-          Gigs Platform
+          Gigs 
         </Typography>
 
         <Typography variant="body1" paragraph>
