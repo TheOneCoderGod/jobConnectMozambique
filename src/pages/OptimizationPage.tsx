@@ -82,7 +82,7 @@ const OptimizationPage: React.FC = () => {
       <Box sx={{ my: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom>
           <SpeedIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-          7. Performance Optimization
+            Performance Optimization
         </Typography>
         
         <Typography variant="body1" paragraph>

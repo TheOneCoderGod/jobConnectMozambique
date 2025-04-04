@@ -110,7 +110,7 @@ const VoiceReadingPage: React.FC = () => {
       <Box sx={{ my: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom>
           <RecordVoiceOverIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-          5. Voice Reading Mode
+          Voice Reading Mode
         </Typography>
         
         <Typography variant="body1" paragraph>

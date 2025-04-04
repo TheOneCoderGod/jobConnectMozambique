@@ -24,7 +24,7 @@ const WhatsAppPage: React.FC = () => {
       <Box sx={{ my: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom>
           <WhatsAppIcon sx={{ mr: 1, verticalAlign: 'middle', color: '#25D366' }} />
-          4. WhatsApp Integration
+             WhatsApp Integration
         </Typography>
         
         <Typography variant="body1" paragraph>
