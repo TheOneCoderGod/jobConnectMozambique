@@ -1,3 +1,0 @@
-2025-04-04 06:29:00.196 [info] Log level: Info
-2025-04-04 06:29:00.872 [warning] [GitHubBranchProtectionProvider][updateRepositoryBranchProtection] Failed to update repository branch protection: No GitHub authentication session available.
-2025-04-04 06:29:31.777 [warning] [GitHubSourceControlHistoryItemDetailsProvider][_loadAssignableUsers] Failed to load assignable user(s) for nvm-sh/nvm: Error: No GitHub authentication session available.
