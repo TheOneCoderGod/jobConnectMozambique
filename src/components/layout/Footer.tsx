@@ -20,7 +20,7 @@ const Footer = () => {
     >
       <Container maxWidth="lg">
         <Grid container spacing={3} justifyContent="space-between">
-          <Grid item xs={12} sm={4}>
+          <Grid >
             <Box display="flex" alignItems="center" mb={1}>
               <PhoneIcon sx={{ mr: 1 }} />
               <Typography variant="h6" component="div">
@@ -35,7 +35,7 @@ const Footer = () => {
             </Typography>
           </Grid>
           
-          <Grid item xs={12} sm={4}>
+          <Grid >
             <Box display="flex" alignItems="center" mb={1}>
               <HelpIcon sx={{ mr: 1 }} />
               <Typography variant="h6" component="div">
@@ -67,7 +67,7 @@ const Footer = () => {
             </Link>
           </Grid>
           
-          <Grid item xs={12} sm={4}>
+          <Grid >
             <Box display="flex" alignItems="center" mb={1}>
               <InfoIcon sx={{ mr: 1 }} />
               <Typography variant="h6" component="div">

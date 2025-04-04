@@ -167,7 +167,7 @@ const GigsFilter: React.FC = () => {
       
       {showFilters && (
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid >
             <FormControl fullWidth size="small">
               <InputLabel id="location-filter-label">Location</InputLabel>
               <Select
@@ -189,7 +189,7 @@ const GigsFilter: React.FC = () => {
             </FormControl>
           </Grid>
           
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid >
             <FormControl fullWidth size="small">
               <InputLabel id="category-filter-label">Category</InputLabel>
               <Select
@@ -211,7 +211,7 @@ const GigsFilter: React.FC = () => {
             </FormControl>
           </Grid>
           
-          <Grid item xs={12} md={4}>
+          <Grid>
             <Box sx={{ px: 1 }}>
               <Typography id="rating-slider-label" gutterBottom>
                 Minimum Rating

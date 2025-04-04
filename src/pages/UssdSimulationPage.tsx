@@ -156,7 +156,7 @@ const UssdSimulationPage: React.FC = () => {
         />
         
         <Grid container spacing={4}>
-          <Grid item xs={12} md={6}>
+          <Grid >
             <Card sx={{ height: '100%' }}>
               <CardContent>
                 <Typography variant="h6" gutterBottom>
@@ -214,7 +214,7 @@ const UssdSimulationPage: React.FC = () => {
             </Card>
           </Grid>
           
-          <Grid item xs={12} md={6}>
+          <Grid >
             <Paper 
               sx={{ 
                 p: 2, 
@@ -255,7 +255,7 @@ const UssdSimulationPage: React.FC = () => {
               
               <Box component="form" onSubmit={handleUssdSubmit}>
                 <Grid container spacing={1} alignItems="center">
-                  <Grid item xs={9}>
+                  <Grid>
                     <TextField
                       fullWidth
                       variant="outlined"
@@ -281,7 +281,7 @@ const UssdSimulationPage: React.FC = () => {
                       }}
                     />
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid>
                     <Button
                       fullWidth
                       variant="contained"

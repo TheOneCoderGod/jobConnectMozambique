@@ -38,17 +38,17 @@ const WhatsAppPage: React.FC = () => {
         />
         
         <Grid container spacing={4}>
-          <Grid item xs={12}>
+          <Grid >
             <WhatsAppConnection />
           </Grid>
           
           {isConnected && isVerified && (
-            <Grid item xs={12}>
+            <Grid >
               <WhatsAppNotifications />
             </Grid>
           )}
           
-          <Grid item xs={12}>
+          <Grid >
             <Paper sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom>
                 How WhatsApp Integration Works
@@ -106,7 +106,7 @@ const WhatsAppPage: React.FC = () => {
             </Paper>
           </Grid>
           
-          <Grid item xs={12}>
+          <Grid>
             <Paper sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom>
                 WhatsApp Commands

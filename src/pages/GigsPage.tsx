@@ -128,7 +128,7 @@ const GigsPage: React.FC = () => {
         
         <Grid container spacing={3}>
           {displayedGigs.map((gig) => (
-            <Grid item xs={12} sm={6} md={4} key={gig.id}>
+            <Grid key={gig.id}>
               <GigCard gig={gig} onSelect={handleSelectGig} />
             </Grid>
           ))}
@@ -170,7 +170,7 @@ const GigsPage: React.FC = () => {
               </DialogTitle>
               <DialogContent dividers>
                 <Grid container spacing={3}>
-                  <Grid item xs={12} md={8}>
+                  <Grid>
                     <Typography variant="body1" paragraph>
                       {selectedGig.description}
                     </Typography>
@@ -226,7 +226,7 @@ const GigsPage: React.FC = () => {
                     </Stack>
                   </Grid>
                   
-                  <Grid item xs={12} md={4}>
+                  <Grid >
                     <Paper variant="outlined" sx={{ p: 2 }}>
                       <Typography variant="subtitle1" gutterBottom>
                         About the Employer:

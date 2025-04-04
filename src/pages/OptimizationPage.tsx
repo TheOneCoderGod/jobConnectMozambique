@@ -96,7 +96,7 @@ const OptimizationPage: React.FC = () => {
         />
         
         <Grid container spacing={3}>
-          <Grid item xs={12}>
+          <Grid >
             <Paper sx={{ p: 3, mb: 3 }}>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
                 <Typography variant="h6">
@@ -139,7 +139,7 @@ const OptimizationPage: React.FC = () => {
             </Paper>
           </Grid>
           
-          <Grid item xs={12} md={6}>
+          <Grid >
             <Paper sx={{ p: 3, height: '100%' }}>
               <Typography variant="h6" gutterBottom>
                 <MemoryIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
@@ -207,7 +207,7 @@ const OptimizationPage: React.FC = () => {
             </Paper>
           </Grid>
           
-          <Grid item xs={12} md={6}>
+          <Grid >
             <Paper sx={{ p: 3, height: '100%' }}>
               <Typography variant="h6" gutterBottom>
                 <SpeedIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
@@ -271,7 +271,7 @@ const OptimizationPage: React.FC = () => {
             </Paper>
           </Grid>
           
-          <Grid item xs={12}>
+          <Grid>
             <Paper sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom>
                 <ImageIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
@@ -323,7 +323,7 @@ const OptimizationPage: React.FC = () => {
             </Paper>
           </Grid>
           
-          <Grid item xs={12}>
+          <Grid>
             <Paper sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom>
                 <AnimationIcon sx={{ mr: 1, verticalAlign: 'middle' }} />

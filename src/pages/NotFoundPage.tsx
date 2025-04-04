@@ -43,7 +43,7 @@ const NotFoundPage: React.FC = () => {
           </Typography>
           
           <Grid container spacing={2} justifyContent="center" sx={{ mt: 2 }}>
-            <Grid item>
+            <Grid>
               <Button 
                 variant="contained" 
                 color="primary" 
@@ -55,7 +55,7 @@ const NotFoundPage: React.FC = () => {
                 Go to Home
               </Button>
             </Grid>
-            <Grid item>
+            <Grid>
               <Button 
                 variant="outlined" 
                 color="primary" 
